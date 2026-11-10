@@ -1,9 +1,51 @@
-import { ArrowUp, ArrowUpRight, Sparkles } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowUp, ArrowUpRight } from 'lucide-react';
+import { scrollToTarget } from '../lib/scroll.js';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const rootRef = useRef(null);
+
+  useEffect(() => {
+    const mm = gsap.matchMedia(rootRef);
+
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const q = gsap.utils.selector(rootRef);
+
+      gsap.fromTo(
+        q('.name-fill'),
+        { backgroundPosition: '100% 50%' },
+        {
+          backgroundPosition: '0% 50%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: rootRef.current,
+            start: 'top 80%',
+            end: 'bottom bottom',
+            scrub: 0.6,
+          },
+        }
+      );
+
+      gsap.from(q('.name-line'), {
+        yPercent: 40,
+        autoAlpha: 0,
+        duration: 1.1,
+        ease: 'expo.out',
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: q('.name-signature')[0],
+          start: 'top 85%',
+          once: true,
+        },
+      });
+    });
+
+    return () => mm.revert();
+  }, []);
 
   const navLinks = [
     { name: 'Home', href: '#hero' },
@@ -11,43 +53,56 @@ export default function Footer() {
     { name: 'Services', href: '#services' },
     { name: 'Process', href: '#process' },
     { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '#contact' },
   ];
 
   const socialLinks = [
     { name: 'LinkedIn', href: 'https://linkedin.com/in/shazalqaiser' },
     { name: 'Instagram', href: 'https://instagram.com/shazalqaiser' },
     { name: 'YouTube', href: 'https://youtube.com' },
-    { name: 'Behance', href: 'https://behance.net' }
+    { name: 'Behance', href: 'https://behance.net' },
   ];
 
   return (
-    <footer className="relative bg-[#070707] border-t border-white/10 pt-20 pb-12 px-6 sm:px-8 overflow-hidden select-none">
-      <div className="max-w-7xl mx-auto space-y-16">
-        {/* Top Tier: Brand & Nav Links */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+    <footer ref={rootRef} className="tone-dark relative overflow-hidden border-t border-line bg-canvas">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
+
+      <div className="container-premium px-6 sm:px-8 pt-20 pb-8 space-y-16">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-5 space-y-4">
-            <a href="#hero" className="text-3xl sm:text-4xl font-bold font-heading text-white tracking-tight">
-              SHAZAL QAISER
+            <p className="text-sm font-semibold text-accent">Let’s build the next cut</p>
+            <p className="max-w-sm text-base leading-relaxed text-muted">
+              Video editing and SEO for creators, startups, and brands who want craft with
+              measurable reach.
+            </p>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTarget('#contact');
+              }}
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-paper transition-transform hover:scale-[1.03]"
+              data-cursor="interactive"
+            >
+              Start a project
+              <ArrowUpRight size={16} />
             </a>
-            <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-[#D8FF3E]">
-              CREATING VISUAL STORIES. BUILDING DIGITAL GROWTH.
-            </p>
-            <p className="text-xs text-[#888] max-w-sm leading-relaxed">
-              Video editing and search engine optimization consulting for creators, high-growth startups, and visionary brands worldwide.
-            </p>
           </div>
 
           <div className="md:col-span-4 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#969696] block mb-2">
-              QUICK NAVIGATION
+            <span className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-muted">
+              Navigate
             </span>
-            <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+            <div className="grid grid-cols-2 gap-2 text-sm">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-[#969696] hover:text-white transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToTarget(link.href);
+                  }}
+                  className="text-muted transition-colors hover:text-ink"
                 >
                   {link.name}
                 </a>
@@ -56,52 +111,64 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3 space-y-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#969696] block mb-2">
-              SOCIAL CONNECT
+            <span className="mb-2 block font-mono text-[11px] uppercase tracking-widest text-muted">
+              Social
             </span>
-            <div className="space-y-1.5 text-xs font-mono">
+            <div className="space-y-1.5 text-sm">
               {socialLinks.map((soc) => (
                 <a
                   key={soc.name}
                   href={soc.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between text-[#969696] hover:text-[#D8FF3E] transition-colors py-1 group"
+                  className="group flex items-center justify-between py-1 text-muted transition-colors hover:text-accent"
                 >
                   <span>{soc.name}</span>
-                  <ArrowUpRight size={13} className="text-[#666] group-hover:text-[#D8FF3E]" />
+                  <ArrowUpRight size={13} className="text-muted group-hover:text-accent" />
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Huge Oversized Brand Display */}
-        <div className="border-y border-white/5 py-8 text-center overflow-hidden">
-          <h2 className="text-5xl sm:text-7xl md:text-9xl font-bold font-heading tracking-tighter text-white/[0.06] hover:text-[#D8FF3E]/10 transition-colors duration-500 whitespace-nowrap">
-            SHAZAL QAISER
+        {/* Oversized signature */}
+        <div className="name-signature relative overflow-hidden border-y border-line py-8 sm:py-12">
+          <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.28em] text-muted">
+            Portfolio 2026 · Lahore / Remote
+          </p>
+
+          <h2 className="name-mega select-none" aria-label="Shazal Qaiser">
+            <span className="name-line name-outline block">Shazal</span>
+            <span className="name-line name-fill block">Qaiser</span>
           </h2>
+
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <p className="max-w-sm text-sm text-muted">
+              Video editor × SEO specialist — crafting stories people watch and search that
+              compounds.
+            </p>
+            <span className="font-mono text-xs text-accent">SQ // EST. CRAFT</span>
+          </div>
         </div>
 
-        {/* Bottom Tier: Copyright, Availability & Back to Top */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#777]">
-          <div className="flex items-center gap-3">
-            <span>© 2026 SHAZAL QAISER. ALL RIGHTS RESERVED.</span>
-            <span>·</span>
-            <span className="text-[#D8FF3E] flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D8FF3E]" />
-              AVAILABLE FOR 2026
+        <div className="flex flex-col items-center justify-between gap-4 pb-4 text-xs font-mono text-muted sm:flex-row">
+          <div className="flex flex-wrap items-center gap-3">
+            <span>© 2026 Shazal Qaiser</span>
+            <span className="flex items-center gap-1.5 text-accent">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              Available for 2026
             </span>
           </div>
 
           <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-[#969696] hover:text-[#D8FF3E] transition-colors cursor-pointer group"
+            type="button"
+            onClick={() => scrollToTarget(0)}
+            className="group flex cursor-pointer items-center gap-2 text-muted transition-colors hover:text-accent"
             aria-label="Back to top"
             data-cursor="interactive"
           >
-            <span>BACK TO TOP</span>
-            <span className="w-6 h-6 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#D8FF3E] transition-colors">
+            <span>Back to top</span>
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-line transition-colors group-hover:border-accent">
               <ArrowUp size={12} />
             </span>
           </button>

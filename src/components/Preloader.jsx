@@ -7,7 +7,7 @@ export default function Preloader({ onComplete }) {
 
   useEffect(() => {
     let startTimestamp = null;
-    const duration = 1600; // 1.6s smooth duration
+    const duration = 1500;
 
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
@@ -20,10 +20,8 @@ export default function Preloader({ onComplete }) {
       } else {
         setTimeout(() => {
           setIsFinished(true);
-          setTimeout(() => {
-            if (onComplete) onComplete();
-          }, 600);
-        }, 200);
+          setTimeout(() => onComplete?.(), 650);
+        }, 180);
       }
     };
 
@@ -36,53 +34,48 @@ export default function Preloader({ onComplete }) {
       {!isFinished && (
         <motion.div
           key="preloader"
-          initial={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
+          initial={{ clipPath: 'inset(0% 0% 0% 0%)' }}
           exit={{
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
-            transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+            clipPath: 'inset(0% 0% 100% 0%)',
+            transition: { duration: 0.85, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="fixed inset-0 z-[99999] bg-[#090909] text-[#F5F5F0] flex flex-col justify-between p-8 md:p-14 select-none"
+          className="fixed inset-0 z-[99999] bg-canvas text-ink flex flex-col justify-between p-8 md:p-14 select-none"
         >
-          {/* Top Status */}
-          <div className="flex items-center justify-between text-xs tracking-widest uppercase text-[#969696] font-mono">
-            <span>SQ // PORTFOLIO 2026</span>
-            <span className="text-[#D8FF3E]">INITIALIZING SYSTEM</span>
+          <div className="flex items-center justify-between text-[11px] tracking-[0.2em] uppercase text-muted font-mono">
+            <span>SQ · Portfolio 2026</span>
+            <span className="text-accent">Loading craft</span>
           </div>
 
-          {/* Center Brand Masked Reveal */}
           <div className="my-auto overflow-hidden">
             <motion.div
-              initial={{ y: 80, opacity: 0 }}
+              initial={{ y: 90, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="space-y-2"
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="space-y-3"
             >
-              <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter font-heading text-white">
-                SHAZAL QAISER
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter font-display text-ink">
+                Shazal
+                <span className="text-accent">.</span>
               </h1>
-              <p className="text-xs sm:text-sm tracking-[0.25em] uppercase text-[#D8FF3E] font-mono">
-                CREATING DIGITAL IMPACT
+              <p className="text-xs sm:text-sm tracking-[0.28em] uppercase text-muted font-mono">
+                Frames that hold · Search that compounds
               </p>
             </motion.div>
           </div>
 
-          {/* Bottom Progress Counter and Bar */}
           <div className="space-y-4">
-            <div className="flex items-end justify-between">
-              <span className="text-xs tracking-widest uppercase text-[#969696] font-mono">
-                VIDEO EDITING × SEARCH ENGINE OPTIMIZATION
+            <div className="flex items-end justify-between gap-6">
+              <span className="text-[11px] tracking-[0.18em] uppercase text-muted font-mono">
+                Video Editing × SEO Strategy
               </span>
-              <span className="text-3xl sm:text-5xl font-mono font-bold tracking-tight text-white tabular-nums">
-                {progress < 10 ? `00${progress}` : progress < 100 ? `0${progress}` : progress}%
+              <span className="text-4xl sm:text-5xl font-mono font-semibold tracking-tight text-ink tabular-nums">
+                {String(progress).padStart(3, '0')}
               </span>
             </div>
-
-            {/* Progress track */}
-            <div className="w-full h-[2px] bg-white/10 overflow-hidden relative">
+            <div className="w-full h-px bg-line overflow-hidden">
               <motion.div
-                className="h-full bg-[#D8FF3E]"
+                className="h-full bg-accent"
                 style={{ width: `${progress}%` }}
-                transition={{ ease: 'linear' }}
               />
             </div>
           </div>

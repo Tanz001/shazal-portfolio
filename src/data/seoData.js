@@ -19,10 +19,10 @@ export const MONTHLY_SEO_PERFORMANCE = [
 ];
 
 export const KEYWORD_DISTRIBUTION = [
-  { range: 'Top 1-3', count: 184, share: 28, color: '#D8FF3E' },
-  { range: 'Positions 4-10', count: 312, share: 44, color: '#A3E635' },
-  { range: 'Positions 11-20', count: 142, share: 19, color: '#4ADE80' },
-  { range: 'Positions 21-50', count: 68, share: 9, color: '#22C55E' }
+  { range: 'Top 1-3', count: 184, share: 28, color: '#2ED3B7' },
+  { range: 'Positions 4-10', count: 312, share: 44, color: '#9B8AFF' },
+  { range: 'Positions 11-20', count: 142, share: 19, color: '#5AA2FF' },
+  { range: 'Positions 21-50', count: 68, share: 9, color: '#5F626C' }
 ];
 
 export const KEYWORD_TRACKER_SAMPLE = [
