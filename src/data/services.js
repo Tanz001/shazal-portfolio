@@ -14,7 +14,7 @@ export const SERVICES_DATA = [
       { name: 'Precision Color Grading', detail: 'Mood-enhancing color correction, film emulation, and tone curve perfection.' },
       { name: 'Sound Design & Mastering', detail: 'Multi-layer foley, impact risers, dialogue isolation, and spatial mixing.' }
     ],
-    toolkit: ['Premiere Pro', 'DaVinci Resolve', 'After Effects', 'CapCut Pro'],
+    toolkit: ['CapCut', 'Filmora'],
     metrics: [
       { value: '68%+', label: 'Avg. Retention Rate (Target)' },
       { value: '4K/60', label: 'Color-Graded Delivery' },

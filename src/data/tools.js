@@ -1,86 +1,72 @@
 export const TOOLKIT_CATEGORIES = [
   {
-    category: 'Creative Production & Motion',
-    description: 'Industry-standard timeline editors, motion compositors, and color grading suites used to craft high-retention visual stories.',
-    tools: [
-      {
-        name: 'Adobe Premiere Pro',
-        type: 'Timeline NLE',
-        useCase: 'Primary video assembly, multi-camera sequences, fast pacing edits, and timeline pacing.',
-        badge: 'Editorial Workhorse'
-      },
-      {
-        name: 'DaVinci Resolve',
-        type: 'Color & Mastering',
-        useCase: 'Precision node-based color grading, LUT design, film grain emulation, and dynamic range balance.',
-        badge: 'Color Science'
-      },
-      {
-        name: 'Adobe After Effects',
-        type: 'Motion Graphics',
-        useCase: 'Kinetic typography, tracking, masking, visual effects, and customized transition design.',
-        badge: 'Visual Effects'
-      },
-      {
-        name: 'CapCut Pro',
-        type: 'Short-Form Rapid Prototyping',
-        useCase: 'Algorithmic vertical pacing, rapid auto-captions, and trend-focused audio hooks.',
-        badge: 'Short-Form'
-      },
-      {
-        name: 'Adobe Audition',
-        type: 'Audio Suite',
-        useCase: 'Dialogue cleanup, noise reduction, stereo mastering, and ambient soundscape design.',
-        badge: 'Acoustics'
-      },
-      {
-        name: 'Blender / Cinema 3D',
-        type: '3D Motion Assets',
-        useCase: 'Abstract 3D elements, dimensional logos, and geometric title sequences.',
-        badge: '3D Spatial'
-      }
-    ]
-  },
-  {
     category: 'SEO, Crawl & Analytics',
-    description: 'Data engines, crawl spiders, and search intelligence platforms deployed to map intent, audit code, and outrank competitors.',
+    description:
+      'The core of my practice — search intelligence, technical audits, and analytics used to grow organic visibility.',
     tools: [
       {
         name: 'Google Search Console',
-        type: 'Search Performance Engine',
-        useCase: 'Direct SERP query monitoring, indexing status verification, Core Web Vitals, and sitemap health.',
-        badge: 'First-Party Data'
+        type: 'Search Performance',
+        useCase:
+          'SERP query monitoring, indexing status, Core Web Vitals, and sitemap health from Google’s first-party data.',
+        badge: 'First-Party Data',
       },
       {
         name: 'Ahrefs',
         type: 'Competitive Intelligence',
-        useCase: 'Domain backlink audits, organic keyword footprints, content gaps, and SERP volatility analysis.',
-        badge: 'Deep Intelligence'
+        useCase:
+          'Backlink audits, keyword footprints, content gaps, and SERP volatility for competitor displacement.',
+        badge: 'Deep Intelligence',
       },
       {
         name: 'SEMrush',
-        type: 'Market Research Suite',
-        useCase: 'Commercial search intent tracking, competitor advertising intelligence, and keyword difficulty scoring.',
-        badge: 'Intent Mapping'
+        type: 'Market Research',
+        useCase:
+          'Commercial intent tracking, keyword difficulty, and competitor advertising intelligence.',
+        badge: 'Intent Mapping',
       },
       {
         name: 'Screaming Frog SEO Spider',
         type: 'Technical Crawler',
-        useCase: 'Deep site architecture audits, broken redirect chains, canonical tags, and structured data validation.',
-        badge: 'Technical Diagnostics'
+        useCase:
+          'Site architecture audits, redirect chains, canonicals, and structured data validation.',
+        badge: 'Technical Diagnostics',
       },
       {
         name: 'Google Analytics 4 (GA4)',
-        type: 'User Behavioral Telemetry',
-        useCase: 'Traffic attribution, engagement rate analysis, conversion funnels, and landing page performance.',
-        badge: 'User Analytics'
+        type: 'User Analytics',
+        useCase:
+          'Traffic attribution, engagement rates, conversion funnels, and landing page performance.',
+        badge: 'Behavior Tracking',
       },
       {
         name: 'Google Keyword Planner',
-        type: 'Search Volume Forecaster',
-        useCase: 'First-party query volume modeling, localized search intent, and seasonal trend forecasting.',
-        badge: 'Search Demand'
-      }
-    ]
-  }
+        type: 'Search Demand',
+        useCase:
+          'Query volume modeling, localized intent, and seasonal search trend forecasting.',
+        badge: 'Keyword Research',
+      },
+    ],
+  },
+  {
+    category: 'Video Editing',
+    description:
+      'Fast, platform-ready editing for Reels, Shorts, YouTube cuts, and brand social content.',
+    tools: [
+      {
+        name: 'CapCut',
+        type: 'Short-Form Editor',
+        useCase:
+          'Vertical pacing, auto-captions, trend audio, and high-retention hooks for Reels and TikTok.',
+        badge: 'Social & Shorts',
+      },
+      {
+        name: 'Filmora',
+        type: 'Timeline Editor',
+        useCase:
+          'Story edits, transitions, titles, color tweaks, and polished exports for YouTube and brand videos.',
+        badge: 'Long & Mid-Form',
+      },
+    ],
+  },
 ];

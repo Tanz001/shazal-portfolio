@@ -73,7 +73,7 @@ export default function Contact() {
 
             <div className="space-y-3">
               <a
-                href="mailto:tanzeelqaiser66@gmail.com"
+                href="mailto:shazalseo99@gmail.com"
                 className="p-4 rounded-2xl border border-line flex items-center justify-between hover:border-accent transition-colors group"
                 data-cursor="interactive"
               >
@@ -84,7 +84,7 @@ export default function Contact() {
                   <div>
                     <span className="text-[11px] font-mono text-muted uppercase block">Email</span>
                     <span className="text-sm font-semibold text-ink">
-                      tanzeelqaiser66@gmail.com
+                      shazalseo99@gmail.com
                     </span>
                   </div>
                 </div>

@@ -1,22 +1,16 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Bug, Link2, Scissors } from 'lucide-react';
+import { Bug, Clapperboard, Film, Link2 } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
 import { TOOLKIT_CATEGORIES } from '../data/tools.js';
 import { TOOL_ICON_PATHS } from '../data/toolIcons.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ADOBE = { kind: 'letters', color: '#ffb4a8', tile: '#3a1210' };
-
 const TOOL_ICONS = {
-  'Adobe Premiere Pro': { ...ADOBE, letters: 'Pr' },
-  'DaVinci Resolve': { kind: 'path', path: TOOL_ICON_PATHS.davinciresolve, color: '#9db8d9' },
-  'Adobe After Effects': { ...ADOBE, letters: 'Ae' },
-  'CapCut Pro': { kind: 'glyph', Glyph: Scissors, color: '#eef1f6' },
-  'Adobe Audition': { ...ADOBE, letters: 'Au' },
-  'Blender / Cinema 3D': { kind: 'path', path: TOOL_ICON_PATHS.blender, color: '#f5792a' },
+  CapCut: { kind: 'glyph', Glyph: Clapperboard, color: '#eef1f6', tile: '#1a1f2a' },
+  Filmora: { kind: 'glyph', Glyph: Film, color: '#5eead4', tile: '#0f2a28' },
   'Google Search Console': {
     kind: 'path',
     path: TOOL_ICON_PATHS.googlesearchconsole,
@@ -79,7 +73,9 @@ function IconRail({ reverse = false }) {
             className="flex items-center gap-3 rounded-full border border-line bg-surface/80 px-4 py-2.5 backdrop-blur-sm"
           >
             <ToolIcon name={tool.name} />
-            <span className="pr-1 text-sm font-semibold text-ink whitespace-nowrap">{tool.name}</span>
+            <span className="whitespace-nowrap pr-1 text-sm font-semibold text-ink">
+              {tool.name}
+            </span>
           </div>
         ))}
       </div>
@@ -119,9 +115,9 @@ export default function Tools() {
       <div className="container-premium">
         <SectionHeading
           kicker="Skills"
-          title="Tools I cut with"
-          highlight="and rank with."
-          subtitle="Editing suites, motion tools, crawlers, and analytics — the stack behind every project."
+          title="SEO first."
+          highlight="Editing when it counts."
+          subtitle="Search tools I use every day — plus CapCut and Filmora for social and brand video."
         />
       </div>
 
@@ -140,7 +136,11 @@ export default function Tools() {
               <p className="max-w-xl text-sm leading-relaxed text-muted">{group.description}</p>
             </div>
 
-            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul
+              className={`grid grid-cols-1 gap-4 sm:grid-cols-2 ${
+                group.tools.length <= 2 ? 'lg:grid-cols-2 lg:max-w-3xl' : 'lg:grid-cols-3'
+              }`}
+            >
               {group.tools.map((tool) => (
                 <li
                   key={tool.name}
