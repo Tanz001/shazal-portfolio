@@ -1,8 +1,8 @@
 import { ArrowUpRight, Play } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
 import { SERVICES_DATA } from '../data/services.js';
-import videoShowcaseImg from '/src/assets/images/video_editing_showcase_1794316155603.jpg';
-import seoShowcaseImg from '/src/assets/images/seo_data_visualization_1794316157747.jpg';
+import videoShowcaseImg from '../assets/images/video_editing_showcase_1794316155603.jpg';
+import seoShowcaseImg from '../assets/images/seo_data_visualization_1794316157747.jpg';
 
 export default function Services() {
   const videoService = SERVICES_DATA[0];

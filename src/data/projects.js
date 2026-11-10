@@ -1,3 +1,8 @@
+import brandCommercial from '../assets/images/project_brand_commercial_1794316160162.jpg';
+import videoShowcase from '../assets/images/video_editing_showcase_1794316155603.jpg';
+import heroFrame from '../assets/images/hero_cinematic_frame_1794316157176.jpg';
+import seoViz from '../assets/images/seo_data_visualization_1794316157747.jpg';
+
 /**
  * Selected Creative Work & Case Studies Data
  * Note: Metric indicators and client names are designated demo/sample placeholders.
@@ -10,7 +15,7 @@ export const PROJECT_CATEGORIES = [
   'Social Media Reels',
   'Product Commercial',
   'Creative Motion Graphics',
-  'SEO Growth Case Study'
+  'SEO Growth Case Study',
 ];
 
 export const PROJECTS = [
@@ -24,13 +29,17 @@ export const PROJECTS = [
     role: 'Editorial, Sound Design & Color Grade',
     duration: '01:45',
     aspectRatio: '16:9',
-    description: 'Cinematic brand promotional commercial featuring high-contrast anamorphic visuals, heavy rhythmic cuts synced with an electronic soundscape, and precision DaVinci color grading.',
-    thumbnail: '/src/assets/images/project_brand_commercial_1794316160162.jpg',
+    description:
+      'Cinematic brand promotional commercial featuring high-contrast anamorphic visuals, heavy rhythmic cuts synced with an electronic soundscape, and precision DaVinci color grading.',
+    thumbnail: brandCommercial,
     tags: ['Brand Film', '4K Anamorphic', 'Sound Design', 'DaVinci Resolve'],
-    videoSrc: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-    challenge: 'Deliver a high-octane visual identity piece showcasing next-generation electric mobility with zero dialogue and 100% visual and auditory momentum.',
-    solution: 'Crafted a dynamic pacing arc with progressive speed ramping, bespoke foley design, and customized neon edge grading.',
-    deliverables: ['1x 90s Master Commercial', '3x 15s Cutdowns', 'Social Teaser Packs']
+    videoSrc:
+      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+    challenge:
+      'Deliver a high-octane visual identity piece showcasing next-generation electric mobility with zero dialogue and 100% visual and auditory momentum.',
+    solution:
+      'Crafted a dynamic pacing arc with progressive speed ramping, bespoke foley design, and customized neon edge grading.',
+    deliverables: ['1x 90s Master Commercial', '3x 15s Cutdowns', 'Social Teaser Packs'],
   },
   {
     id: 'nordic-solitude-documentary',
@@ -42,13 +51,17 @@ export const PROJECTS = [
     role: 'Long-form Narrative Editing & Color Master',
     duration: '14:20',
     aspectRatio: '16:9',
-    description: 'Long-form cinematic YouTube documentary balancing expansive landscape cinematography with intimate conversational storytelling and high audience retention structure.',
-    thumbnail: '/src/assets/images/video_editing_showcase_1794316155603.jpg',
+    description:
+      'Long-form cinematic YouTube documentary balancing expansive landscape cinematography with intimate conversational storytelling and high audience retention structure.',
+    thumbnail: videoShowcase,
     tags: ['YouTube Long-Form', 'Story Arc', 'Atmospheric Audio', 'Color Master'],
-    videoSrc: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
-    challenge: 'Maintain viewer watch time above 68% across a 14-minute thoughtful documentary narrative.',
-    solution: 'Introduced cyclical narrative micro-hooks every 90 seconds, subtle thematic audio stems, and crisp dynamic b-roll inserts.',
-    deliverables: ['14-min Master Cut', 'Custom Thumbnail Archetypes', 'Retention Chapter Markers']
+    videoSrc:
+      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+    challenge:
+      'Maintain viewer watch time above 68% across a 14-minute thoughtful documentary narrative.',
+    solution:
+      'Introduced cyclical narrative micro-hooks every 90 seconds, subtle thematic audio stems, and crisp dynamic b-roll inserts.',
+    deliverables: ['14-min Master Cut', 'Custom Thumbnail Archetypes', 'Retention Chapter Markers'],
   },
   {
     id: 'kinetic-editorial-suite',
@@ -60,13 +73,19 @@ export const PROJECTS = [
     role: 'Motion Direction & 3D Typography',
     duration: '00:58',
     aspectRatio: '16:9',
-    description: 'High-energy studio showreel utilizing kinetic typography, split-screen geometric masks, and seamless speed-ramped transitions for modern digital screens.',
-    thumbnail: '/src/assets/images/hero_cinematic_frame_1794316157176.jpg',
+    description:
+      'High-energy studio showreel utilizing kinetic typography, split-screen geometric masks, and seamless speed-ramped transitions for modern digital screens.',
+    thumbnail: heroFrame,
     tags: ['Motion Graphics', 'Kinetic Typography', 'After Effects', 'Split Screen'],
-    videoSrc: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    videoSrc:
+      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
     challenge: 'Distill 80 hours of mixed footage into an electrifying 60-second agency introduction.',
     solution: 'Engineered a tempo grid synced to 134 BPM with custom typography displacement passes.',
-    deliverables: ['60s Agency Reel', 'Vertical 9:16 Cut for Instagram/TikTok', 'Looping Exhibition File']
+    deliverables: [
+      '60s Agency Reel',
+      'Vertical 9:16 Cut for Instagram/TikTok',
+      'Looping Exhibition File',
+    ],
   },
   {
     id: 'zenith-saas-seo-architecture',
@@ -78,17 +97,24 @@ export const PROJECTS = [
     role: 'Technical SEO & Content Hierarchy',
     duration: '6 Month Campaign',
     aspectRatio: '16:9',
-    description: 'Comprehensive technical crawl optimization, programmatic architecture restructuring, and content gap execution yielding exponential organic search discovery.',
-    thumbnail: '/src/assets/images/seo_data_visualization_1794316157747.jpg',
+    description:
+      'Comprehensive technical crawl optimization, programmatic architecture restructuring, and content gap execution yielding exponential organic search discovery.',
+    thumbnail: seoViz,
     tags: ['Technical Audit', 'Core Web Vitals', 'Search Intent', 'Internal Linking'],
     stats: [
       { label: 'Organic Traffic Lift', value: '+340%', sub: 'Sample Demo Metric' },
       { label: 'Top 3 Keywords', value: '420+', sub: 'Sample Demo Metric' },
-      { label: 'Crawl Error Reduction', value: '98%', sub: 'Sample Demo Metric' }
+      { label: 'Crawl Error Reduction', value: '98%', sub: 'Sample Demo Metric' },
     ],
-    challenge: 'A legacy enterprise cloud portal was invisible on competitive search terms due to faceted navigation bloat and slow server-side rendering.',
-    solution: 'Restructured canonical architecture, optimized crawl budget by 72%, and built topical authority clusters around developer infrastructure.',
-    deliverables: ['Complete Technical SEO Audit', 'Cluster Keyword Taxonomy', 'Looker Studio Dashboard']
+    challenge:
+      'A legacy enterprise cloud portal was invisible on competitive search terms due to faceted navigation bloat and slow server-side rendering.',
+    solution:
+      'Restructured canonical architecture, optimized crawl budget by 72%, and built topical authority clusters around developer infrastructure.',
+    deliverables: [
+      'Complete Technical SEO Audit',
+      'Cluster Keyword Taxonomy',
+      'Looker Studio Dashboard',
+    ],
   },
   {
     id: 'pulse-reels-retention-system',
@@ -100,13 +126,17 @@ export const PROJECTS = [
     role: 'Short-Form Hook Optimization & Editing',
     duration: '00:30',
     aspectRatio: '9:16',
-    description: 'Fast-paced vertical reel sequence engineered specifically for Instagram Reels & TikTok algorithms with 3-second hook retention and seamless looping.',
-    thumbnail: '/src/assets/images/project_brand_commercial_1794316160162.jpg',
+    description:
+      'Fast-paced vertical reel sequence engineered specifically for Instagram Reels & TikTok algorithms with 3-second hook retention and seamless looping.',
+    thumbnail: brandCommercial,
     tags: ['9:16 Vertical', 'Micro-Transitions', 'Captions', 'Looping Audio'],
-    videoSrc: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4',
-    challenge: 'Cut through crowded fitness feeds with high completion rates and immediate save/share signals.',
-    solution: 'Implemented visual pattern interrupts at second 1.2, dynamic subtitle animations, and an invisible loop outro.',
-    deliverables: ['12x Vertical Reels Pack', 'Sound FX Stems', 'Hook Performance Templates']
+    videoSrc:
+      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4',
+    challenge:
+      'Cut through crowded fitness feeds with high completion rates and immediate save/share signals.',
+    solution:
+      'Implemented visual pattern interrupts at second 1.2, dynamic subtitle animations, and an invisible loop outro.',
+    deliverables: ['12x Vertical Reels Pack', 'Sound FX Stems', 'Hook Performance Templates'],
   },
   {
     id: 'strata-fintech-ranking-dominance',
@@ -118,16 +148,23 @@ export const PROJECTS = [
     role: 'Search Intent Modeling & On-Page SEO',
     duration: '8 Month Campaign',
     aspectRatio: '16:9',
-    description: 'Targeted acquisition strategy focusing on high-commercial intent fintech queries, structured schema markup, and competitor displacement.',
-    thumbnail: '/src/assets/images/seo_data_visualization_1794316157747.jpg',
+    description:
+      'Targeted acquisition strategy focusing on high-commercial intent fintech queries, structured schema markup, and competitor displacement.',
+    thumbnail: seoViz,
     tags: ['Commercial Intent', 'Schema Markup', 'Backlink Profile', 'SERP Features'],
     stats: [
       { label: 'Featured Snippets Won', value: '84', sub: 'Sample Demo Metric' },
       { label: 'Search Impressions', value: '1.2M/mo', sub: 'Sample Demo Metric' },
-      { label: 'Organic Inbound Leads', value: '+185%', sub: 'Sample Demo Metric' }
+      { label: 'Organic Inbound Leads', value: '+185%', sub: 'Sample Demo Metric' },
     ],
-    challenge: 'Overcoming entrenched legacy banking competitors with high domain authority on core merchant solution keywords.',
-    solution: 'Targeted long-tail comparison terms, implemented product entity schemas, and revamped information architecture.',
-    deliverables: ['Competitor Gap Matrix', 'Schema Implementation Map', 'Quarterly Growth Roadmap']
-  }
+    challenge:
+      'Overcoming entrenched legacy banking competitors with high domain authority on core merchant solution keywords.',
+    solution:
+      'Targeted long-tail comparison terms, implemented product entity schemas, and revamped information architecture.',
+    deliverables: [
+      'Competitor Gap Matrix',
+      'Schema Implementation Map',
+      'Quarterly Growth Roadmap',
+    ],
+  },
 ];

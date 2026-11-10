@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
-import portraitImg from '/src/assets/images/creative_director_portrait_1794316159600.jpg';
+import portraitImg from '../assets/images/creative_director_portrait_1794316159600.jpg';
 
 export default function About() {
   const socialLinks = [
